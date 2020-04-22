@@ -1,6 +1,6 @@
 name: jikart
-# description:
-# version: 0.0.1
+description: A simple Dart interface to jikan.moe
+version: 0.1.0
 homepage: https://github.com/ale183/Jikart
 
 environment:
