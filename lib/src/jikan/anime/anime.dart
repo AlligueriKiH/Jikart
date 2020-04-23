@@ -1,3 +1,5 @@
+import 'package:jikart/jikan_objects.dart';
+
 class Anime{
   int _mal_id;
   String _url;
@@ -12,7 +14,7 @@ class Anime{
   int _episodes;
   String _status;
   bool _airing;
-  // TODO: aired
+  Period _aired;
   String _duration;
   String _rating;
   double _score;
@@ -25,7 +27,11 @@ class Anime{
   String _background;
   String _premiered;
   String _broadcast;
-  // TODO: related, producers, licensors, studios, genres
+  Map<String, List<Related>> _related;
+  List<Producer> _producers;
+  List<Producer> _licensors;
+  List<Producer> _studios;
+  List<Genre> _genres;
   List<String> _opening_themes;
   List<String> _ending_themes;
 
@@ -44,6 +50,7 @@ class Anime{
       this._episodes,
       this._status,
       this._airing,
+      this._aired,
       this._duration,
       this._rating,
       this._score,
@@ -56,6 +63,11 @@ class Anime{
       this._background,
       this._premiered,
       this._broadcast,
+      this._related,
+      this._producers,
+      this._licensors,
+      this._studios,
+      this._genres,
       this._opening_themes,
       this._ending_themes);
 
@@ -73,6 +85,7 @@ class Anime{
     var episodes = json['episodes'];
     var status = json['status'];
     var airing = json['airing'];
+    var aired = Period.fromJson(json['aired']);
     var duration = json['duration'];
     var rating = json['rating'];
     var score = json['score'] is int ? json['score'].toDouble() : json['score'];
@@ -85,6 +98,28 @@ class Anime{
     var background = json['background'];
     var premiered = json['premiered'];
     var broadcast = json['broadcast'];
+    var related = <String, List<Related>>{};
+    json['related']?.forEach((k, v) {
+      var temp = <Related>[];
+      v?.forEach((anime) => temp.add(Related.fromJson(anime)));
+      related.putIfAbsent(k, () => temp);
+    });
+    var producers = <Producer>[];
+    for(var producer in json['producers']){
+      producers.add(Producer.fromJson(producer));
+    }
+    var licensors = <Producer>[];
+    for(var licensor in json['licensors']){
+      licensors.add(Producer.fromJson(licensor));
+    }
+    var studios = <Producer>[];
+    for(var studio in json['producers']){
+      studios.add(Producer.fromJson(studio));
+    }
+    var genres = <Genre>[];
+    for(var genre in json['genres']){
+      genres.add(Genre.fromJson(genre));
+    }
     var opening_themes = (json['opening_themes'] as List)?.map((e) => e as String)?.toList();
     var ending_themes = (json['ending_themes'] as List)?.map((e) => e as String)?.toList();
     return Anime(
@@ -101,6 +136,7 @@ class Anime{
       episodes,
       status,
       airing,
+      aired,
       duration,
       rating,
       score,
@@ -113,6 +149,11 @@ class Anime{
       background,
       premiered,
       broadcast,
+      related,
+      producers,
+      licensors,
+      studios,
+      genres,
       opening_themes,
       ending_themes
     );
@@ -131,6 +172,7 @@ class Anime{
   int get episodes => _episodes;
   String get status => _status;
   bool get airing => _airing;
+  Period get aired => _aired;
   String get duration => _duration;
   String get rating => _rating;
   double get score => _score;
@@ -143,6 +185,11 @@ class Anime{
   String get background => _background;
   String get premiered => _premiered;
   String get broadcast => _broadcast;
+  Map<String, List<Related>> get related => _related;
+  List<Producer> get producers => _producers;
+  List<Producer> get licensors => _licensors;
+  List<Producer> get studios => _studios;
+  List<Genre> get genres => _genres;
   List<String> get opening_themes => _opening_themes;
   List<String> get ending_themes => _ending_themes;
 }
