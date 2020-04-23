@@ -14,6 +14,7 @@ void main() async{
   var stats = await jikart.anime.getStats(anime_id);
 
   print('${anime.title}');
+  print('Status: ${anime.status} (${anime.aired.string})');
   print('Score: ${anime.score}\n');
 
   print('Episodes:');
@@ -22,5 +23,10 @@ void main() async{
   print('\nScores:');
   stats.scores?.forEach((k, v) => print('${k}: ${v.votes} (${v.percentage}%)'));
 
+  print('\nRelated');
+  anime.related?.forEach((type, anime){
+    print('- ${type}:');
+    anime?.forEach((anime) => print(anime.name));
+  });
 }
 ```
