@@ -24,3 +24,8 @@ export 'package:jikart/src/jikan/anime/episode.dart';
 export 'package:jikart/src/jikan/anime/producer.dart';
 export 'package:jikart/src/jikan/anime/va.dart';
 export 'package:jikart/src/jikan/anime/video.dart';
+
+// Manga objects
+export 'package:jikart/src/jikan/manga/author.dart';
+export 'package:jikart/src/jikan/manga/manga.dart';
+export 'package:jikart/src/jikan/manga/serialization.dart';
