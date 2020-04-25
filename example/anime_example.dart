@@ -9,7 +9,7 @@ void main() async{
   var episodes = await jikart.anime.getEpisodes(anime_id);
   var stats = await jikart.anime.getStats(anime_id);
 
-  print('${anime.title}');
+  print('${anime.title} (${anime.type})');
   print('Status: ${anime.status} (${anime.aired.string})');
   print('Score: ${anime.score}\n');
 
@@ -22,6 +22,6 @@ void main() async{
   print('\nRelated');
   anime.related?.forEach((type, anime){
     print('- ${type}:');
-    anime?.forEach((anime) => print(anime.name));
+    anime?.forEach((result) => print(result.name));
   });
 }
