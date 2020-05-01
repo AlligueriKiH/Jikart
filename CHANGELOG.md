@@ -1,3 +1,8 @@
+## 0.2.0
+
+- Added all manga methods.
+- Added all manga related objects.
+
 ## 0.1.0
 
 - Added all anime methods.
