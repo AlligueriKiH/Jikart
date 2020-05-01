@@ -14,65 +14,44 @@ class AnimeMethods{
 
   Future<List<Staff>> getStaff(int id) async{
     var response = await _client.get('anime/${id}/characters_staff');
-    var staff_list = <Staff>[];
-    for(var staff in response['staff']){
-      staff_list.add(Staff.fromJson(staff));
-    }
-    return staff_list;
+    var staff_list = response['staff'] as List;
+    return List.generate(staff_list.length, (i) => Staff.fromJson(staff_list[i]));
   }
 
   Future<List<AnimeCharacter>> getCharacters(int id) async{
     var response = await _client.get('anime/${id}/characters_staff');
-    var characters = <AnimeCharacter>[];
-    for(var character in response['characters']){
-      characters.add(AnimeCharacter.fromJson(character));
-    }
-    return characters;
+    var characters = response['characters'] as List;
+    return List.generate(characters.length, (i) => AnimeCharacter.fromJson(characters[i]));
   }
 
   Future<List<Episode>> getEpisodes(int id, {int page = 1}) async{
     var response = await _client.get('anime/${id}/episodes/${page}');
-    var episodes = <Episode>[];
-    for(var episode in response['episodes']){
-      episodes.add(Episode.fromJson(episode));
-    }
-    return episodes;
+    var episodes = response['episodes'] as List;
+    return List.generate(episodes.length, (i) => Episode.fromJson(episodes[i]));
   }
 
   Future<List<News>> getNews(int id) async{
     var response = await _client.get('anime/${id}/news');
-    var news_list = <News>[];
-    for(var news in response['articles']){
-      news_list.add(News.fromJson(news));
-    }
-    return news_list;
+    var news_list = response['articles'] as List;
+    return List.generate(news_list.length, (i) => News.fromJson(news_list[i]));
   }
 
   Future<List<Picture>> getPictures(int id) async{
     var response = await _client.get('anime/${id}/pictures');
-    var pictures = <Picture>[];
-    for(var picture in response['pictures']){
-      pictures.add(Picture.fromJson(picture));
-    }
-    return pictures;
+    var pictures = response['pictures'] as List;
+    return List.generate(pictures.length, (i) => Picture.fromJson(pictures[i]));
   }
 
   Future<List<Video>> getPromos(int id) async{
     var response = await _client.get('anime/${id}/videos');
-    var videos = <Video>[];
-    for(var video in response['promo']){
-      videos.add(Video.fromJson(video));
-    }
-    return videos;
+    var videos = response['promo'] as List;
+    return List.generate(videos.length, (i) => Video.fromJson(videos[i]));
   }
 
   Future<List<Video>> getEpisodesVideos(int id) async{
     var response = await _client.get('anime/${id}/videos');
-    var videos = <Video>[];
-    for(var video in response['episodes']){
-      videos.add(Video.fromJson(video));
-    }
-    return videos;
+    var videos = response['episodes'] as List;
+    return List.generate(videos.length, (i) => Video.fromJson(videos[i]));
   }
 
   Future<AnimeStats> getStats(int id) async{
@@ -82,11 +61,8 @@ class AnimeMethods{
 
   Future<List<Topic>> getForumTopics(int id) async{
     var response = await _client.get('anime/${id}/forum');
-    var topics = <Topic>[];
-    for(var topic in response['topics']){
-      topics.add(Topic.fromJson(topic));
-    }
-    return topics;
+    var topics = response['topics'] as List;
+    return List.generate(topics.length, (i) => Topic.fromJson(topics[i]));
   }
 
   Future<String> getMoreInfo(int id) async{
@@ -96,28 +72,19 @@ class AnimeMethods{
 
   Future<List<AnimeReview>> getReviews(int id, {int page = 1}) async{
     var response = await _client.get('anime/${id}/reviews/${page}');
-    var reviews = <AnimeReview>[];
-    for(var review in response['reviews']){
-      reviews.add(AnimeReview.fromJson(review));
-    }
-    return reviews;
+    var reviews = response['reviews'] as List;
+    return List.generate(reviews.length, (i) => AnimeReview.fromJson(reviews[i]));
   }
 
   Future<List<Recommendation>> getRecommendations(int id) async{
     var response = await _client.get('anime/${id}/recommendations');
-    var recommendations = <Recommendation>[];
-    for(var recommendation in response['recommendations']){
-      recommendations.add(Recommendation.fromJson(recommendation));
-    }
-    return recommendations;
+    var recommendations = response['recommendations'] as List;
+    return List.generate(recommendations.length, (i) => Recommendation.fromJson(recommendations[i]));
   }
 
   Future<List<AnimeUserUpdate>> getUserUpdates(int id, {int page = 1}) async{
     var response = await _client.get('anime/${id}/userupdates/${page}');
-    var userupdates = <AnimeUserUpdate>[];
-    for(var userupdate in response['users']){
-      userupdates.add(AnimeUserUpdate.fromJson(userupdate));
-    }
-    return userupdates;
+    var userupdates = response['users'] as List;
+    return List.generate(userupdates.length, (i) => AnimeUserUpdate.fromJson(userupdates[i]));
   }
 }

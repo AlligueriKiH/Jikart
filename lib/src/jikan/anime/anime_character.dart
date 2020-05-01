@@ -22,10 +22,8 @@ class AnimeCharacter{
     var image_url = json['image_url'];
     var name = json['name'];
     var role = json['role'];
-    var voice_actors = <VA>[];
-    for(var va in json['voice_actors']){
-      voice_actors.add(VA.fromJson(va));
-    }
+    var VA_list = json['voice_actors'] as List;
+    var voice_actors = List.generate(VA_list.length, (i) => VA.fromJson(VA_list[i]));
     return AnimeCharacter(mal_id, url, image_url, name, role, voice_actors);
   }
 

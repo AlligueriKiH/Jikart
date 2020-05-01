@@ -104,22 +104,10 @@ class Anime{
       v?.forEach((anime) => temp.add(Related.fromJson(anime)));
       related.putIfAbsent(k, () => temp);
     });
-    var producers = <Producer>[];
-    for(var producer in json['producers']){
-      producers.add(Producer.fromJson(producer));
-    }
-    var licensors = <Producer>[];
-    for(var licensor in json['licensors']){
-      licensors.add(Producer.fromJson(licensor));
-    }
-    var studios = <Producer>[];
-    for(var studio in json['producers']){
-      studios.add(Producer.fromJson(studio));
-    }
-    var genres = <Genre>[];
-    for(var genre in json['genres']){
-      genres.add(Genre.fromJson(genre));
-    }
+    var producers = List.generate(json['producers'].length, (i) => Producer.fromJson(json['producers'][i]));
+    var licensors = List.generate(json['licensors'].length, (i) => Producer.fromJson(json['licensors'][i]));
+    var studios = List.generate(json['studios'].length, (i) => Producer.fromJson(json['studios'][i]));
+    var genres = List.generate(json['genres'].length, (i) => Genre.fromJson(json['genres'][i]));
     var opening_themes = (json['opening_themes'] as List)?.map((e) => e as String)?.toList();
     var ending_themes = (json['ending_themes'] as List)?.map((e) => e as String)?.toList();
     return Anime(
