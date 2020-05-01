@@ -7,6 +7,7 @@ void main() async{
 
   var manga = await jikart.manga.getManga(manga_id);
   var characters = await jikart.manga.getCharacters(manga_id);
+  var stats = await jikart.manga.getStats(manga_id);
 
   print('${manga.title} (${manga.type})');
   print('Status: ${manga.status} (${manga.published.string})');
@@ -14,6 +15,9 @@ void main() async{
 
   print('\nCharacters:');
   characters?.forEach((character) => print('${character.name} (${character.role})'));
+
+  print('\nScores:');
+  stats?.scores?.forEach((k, v) => print('${k}: ${v.votes} (${v.percentage}%)'));
 
   print('\nRelated:');
   manga.related?.forEach((type, manga){

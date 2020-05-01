@@ -29,4 +29,8 @@ export 'package:jikart/src/jikan/anime/video.dart';
 export 'package:jikart/src/jikan/manga/author.dart';
 export 'package:jikart/src/jikan/manga/manga.dart';
 export 'package:jikart/src/jikan/manga/manga_character.dart';
+export 'package:jikart/src/jikan/manga/manga_review.dart';
+export 'package:jikart/src/jikan/manga/manga_reviewer.dart';
+export 'package:jikart/src/jikan/manga/manga_stats.dart';
+export 'package:jikart/src/jikan/manga/manga_userupdate.dart';
 export 'package:jikart/src/jikan/manga/serialization.dart';
