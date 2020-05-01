@@ -28,4 +28,5 @@ export 'package:jikart/src/jikan/anime/video.dart';
 // Manga objects
 export 'package:jikart/src/jikan/manga/author.dart';
 export 'package:jikart/src/jikan/manga/manga.dart';
+export 'package:jikart/src/jikan/manga/manga_character.dart';
 export 'package:jikart/src/jikan/manga/serialization.dart';

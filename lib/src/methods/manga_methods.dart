@@ -11,4 +11,10 @@ class MangaMethods{
     var response = await _client.get('manga/${id}');
     return Manga.fromJson(response);
   }
+
+  Future<List<MangaCharacter>> getCharacters(int id) async{
+    var response = await _client.get('manga/${id}/characters');
+    var characters = response['characters'] as List;
+    return List.generate(characters.length, (i) => MangaCharacter.fromJson(characters[i]));
+  }
 }

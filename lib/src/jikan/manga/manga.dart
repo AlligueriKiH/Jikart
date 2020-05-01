@@ -147,5 +147,4 @@ class Manga{
   List<Genre> get genres => _genres;
   List<Author> get authors => _authors;
   List<Serialization> get serializations => _serializations;
-
 }
