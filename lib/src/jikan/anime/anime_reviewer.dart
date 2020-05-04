@@ -1,29 +1,29 @@
 class AnimeReviewer{
   String _url;
-  String _image_url;
+  String _imageUrl;
   String _username;
-  int _episodes_seen;
+  int _episodesSeen;
   Map<String, dynamic> _scores;
 
   AnimeReviewer(
       this._url,
-      this._image_url,
+      this._imageUrl,
       this._username,
-      this._episodes_seen,
+      this._episodesSeen,
       this._scores);
 
   factory AnimeReviewer.fromJson(Map<String, dynamic> json){
     var url = json['url'];
-    var image_url = json['image_url'];
+    var imageUrl = json['image_url'];
     var username = json['username'];
-    var episodes_seen = json['episodes_seen'];
+    var episodesSeen = json['episodes_seen'];
     var scores = json['scores'];
-    return AnimeReviewer(url, image_url, username, episodes_seen, scores);
+    return AnimeReviewer(url, imageUrl, username, episodesSeen, scores);
   }
 
   String get url => _url;
-  String get image_url => _image_url;
+  String get imageUrl => _imageUrl;
   String get username => _username;
-  int get episodes_seen => _episodes_seen;
+  int get episodesSeen => _episodesSeen;
   Map<String, dynamic> get scores => _scores;
 }

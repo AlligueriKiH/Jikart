@@ -1,53 +1,53 @@
 class Episode{
-  int _episode_id;
+  int _episodeId;
   String _title;
-  String _title_japanese;
-  String _title_romanji;
+  String _titleJapanese;
+  String _titleRomanji;
   String _aired;
   bool _filler;
   bool _recap;
-  String _video_url;
-  String _forum_url;
+  String _videoUrl;
+  String _forumUrl;
 
-  Episode(this._episode_id,
+  Episode(this._episodeId,
       this._title,
-      this._title_japanese,
-      this._title_romanji,
+      this._titleJapanese,
+      this._titleRomanji,
       this._aired,
       this._filler,
       this._recap,
-      this._video_url,
-      this._forum_url);
+      this._videoUrl,
+      this._forumUrl);
 
   factory Episode.fromJson(Map<String, dynamic> json){
-    var episode_id = json['episode_id'];
+    var episodeId = json['episode_id'];
     var title = json['title'];
-    var title_japanese = json['title_japanese'];
-    var title_romanji = json['title_romanji'];
+    var titleJapanese = json['title_japanese'];
+    var titleRomanji = json['title_romanji'];
     var aired = json['aired'];
     var filler = json['filler'];
     var recap = json['recap'];
-    var video_url = json['video_url'];
-    var forum_url = json['forum_url'];
+    var videoUrl = json['video_url'];
+    var forumUrl = json['forum_url'];
     return Episode(
-      episode_id,
+      episodeId,
       title,
-      title_japanese,
-      title_romanji,
+      titleJapanese,
+      titleRomanji,
       aired,
       filler,
       recap,
-      video_url,
-      forum_url);
+      videoUrl,
+      forumUrl);
   }
 
-  int get episode_id => _episode_id;
+  int get episodeId => _episodeId;
   String get title => _title;
-  String get title_japanese => _title_japanese;
-  String get title_romanji => _title_romanji;
+  String get titleJapanese => _titleJapanese;
+  String get titleRomanji => _titleRomanji;
   String get aired => _aired;
   bool get filler => _filler;
   bool get recap => _recap;
-  String get video_url => _video_url;
-  String get forum_url => _forum_url;
+  String get videoUrl => _videoUrl;
+  String get forumUrl => _forumUrl;
 }

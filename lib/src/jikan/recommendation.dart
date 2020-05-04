@@ -1,33 +1,33 @@
 class Recommendation{
-  int _mal_id;
+  int _malId;
   String _url;
-  String _image_url;
-  String _recommendation_url;
+  String _imageUrl;
+  String _recommendationUrl;
   String _title;
-  int _recommendation_count;
+  int _recommendationCount;
 
   Recommendation(
-      this._mal_id,
+      this._malId,
       this._url,
-      this._image_url,
-      this._recommendation_url,
+      this._imageUrl,
+      this._recommendationUrl,
       this._title,
-      this._recommendation_count);
+      this._recommendationCount);
 
   factory Recommendation.fromJson(Map<String, dynamic> json){
-    var mal_id = json['mal_id'];
+    var malId = json['mal_id'];
     var url = json['url'];
-    var image_url = json['image_url'];
-    var recommendation_url = json['recommendation_url'];
+    var imageUrl = json['image_url'];
+    var recommendationUrl = json['recommendation_url'];
     var title = json['title'];
-    var recommendation_count = json['recommendation_count'];
-    return Recommendation(mal_id, url, image_url, recommendation_url, title, recommendation_count);
+    var recommendationCount = json['recommendation_count'];
+    return Recommendation(malId, url, imageUrl, recommendationUrl, title, recommendationCount);
   }
 
-  int get mal_id => _mal_id;
+  int get malId => _malId;
   String get url => _url;
-  String get image_url => _image_url;
-  String get recommendation_url => _recommendation_url;
+  String get imageUrl => _imageUrl;
+  String get recommendationUrl => _recommendationUrl;
   String get title => _title;
-  int get recommendation_count => _recommendation_count;
+  int get recommendationCount => _recommendationCount;
 }

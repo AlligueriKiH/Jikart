@@ -1,29 +1,29 @@
 class MangaCharacter{
-  int _mal_id;
+  int _malId;
   String _url;
-  String _image_url;
+  String _imageUrl;
   String _name;
   String _role;
 
   MangaCharacter(
-      this._mal_id,
+      this._malId,
       this._url,
-      this._image_url,
+      this._imageUrl,
       this._name,
       this._role);
 
   factory MangaCharacter.fromJson(Map<String, dynamic> json){
-    var mal_id = json['mal_id'];
+    var malId = json['mal_id'];
     var url = json['url'];
-    var image_url = json['image_url'];
+    var imageUrl = json['image_url'];
     var name = json['name'];
     var role = json['role'];
-    return MangaCharacter(mal_id, url, image_url, name, role);
+    return MangaCharacter(malId, url, imageUrl, name, role);
   }
 
-  int get mal_id => _mal_id;
+  int get malId => _malId;
   String get url => _url;
-  String get image_url => _image_url;
+  String get imageUrl => _imageUrl;
   String get name => _name;
   String get role => _role;
 }

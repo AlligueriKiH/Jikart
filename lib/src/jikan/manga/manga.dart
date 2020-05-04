@@ -1,14 +1,14 @@
 import 'package:jikart/jikan_objects.dart';
 
 class Manga{
-  int _mal_id;
+  int _malId;
   String _url;
   String _title;
-  String _title_english;
-  String _title_japanese;
-  List<String> _title_synonyms;
+  String _titleEnglish;
+  String _titleJapanese;
+  List<String> _titleSynonyms;
   String _status;
-  String _image_url;
+  String _imageUrl;
   String _type;
   int _volumes;
   int _chapters;
@@ -16,7 +16,7 @@ class Manga{
   Period _published;
   int _rank;
   double _score;
-  int _scored_by;
+  int _scoredBy;
   int _popularity;
   int _members;
   int _favorites;
@@ -28,14 +28,14 @@ class Manga{
   List<Serialization> _serializations;
 
   Manga(
-      this._mal_id,
+      this._malId,
       this._url,
       this._title,
-      this._title_english,
-      this._title_japanese,
-      this._title_synonyms,
+      this._titleEnglish,
+      this._titleJapanese,
+      this._titleSynonyms,
       this._status,
-      this._image_url,
+      this._imageUrl,
       this._type,
       this._volumes,
       this._chapters,
@@ -43,7 +43,7 @@ class Manga{
       this._published,
       this._rank,
       this._score,
-      this._scored_by,
+      this._scoredBy,
       this._popularity,
       this._members,
       this._favorites,
@@ -55,14 +55,14 @@ class Manga{
       this._serializations);
 
   factory Manga.fromJson(Map<String, dynamic> json){
-    var mal_id = json['mal_id'];
+    var malId = json['mal_id'];
     var url = json['url'];
     var title = json['title'];
-    var title_english = json['title_english'];
-    var title_japanese = json['title_japanese'];
-    var title_synonyms = (json['title_synonyms'] as List)?.map((e) => e as String)?.toList();
+    var titleEnglish = json['title_english'];
+    var titleJapanese = json['title_japanese'];
+    var titleSynonyms = (json['title_synonyms'] as List)?.map((e) => e as String)?.toList();
     var status = json['status'];
-    var image_url = json['image_url'];
+    var imageUrl = json['image_url'];
     var type = json['type'];
     var volumes = json['volumes'];
     var chapters = json['chapters'];
@@ -70,7 +70,7 @@ class Manga{
     var published = Period.fromJson(json['published']);
     var rank = json['rank'];
     var score = json['score'] is int ? json['score'].toDouble() : json['score'];
-    var scored_by = json['scored_by'];
+    var scoredBy = json['scored_by'];
     var popularity = json['popularity'];
     var members = json['members'];
     var favorites = json['favorites'];
@@ -82,27 +82,18 @@ class Manga{
       v?.forEach((anime) => temp.add(Related.fromJson(anime)));
       related.putIfAbsent(k, () => temp);
     });
-    var genres = <Genre>[];
-    for(var genre in json['genres']){
-      genres.add(Genre.fromJson(genre));
-    }
-    var authors = <Author>[];
-    for(var author in json['authors']){
-      authors.add(Author.fromJson(author));
-    }
-    var serializations = <Serialization>[];
-    for(var serialization in json['serializations']){
-      serializations.add(Serialization.fromJson(serialization));
-    }
+    var genres = List.generate(json['genres'].length, (i) => Genre.fromJson(json['genres'][i]));
+    var authors = List.generate(json['authors'].length, (i) => Author.fromJson(json['authors'][i]));
+    var serializations = List.generate(json['serializations'].length, (i) => Serialization.fromJson(json['serializations'][i]));
     return Manga(
-        mal_id,
+        malId,
         url,
         title,
-        title_english,
-        title_japanese,
-        title_synonyms,
+        titleEnglish,
+        titleJapanese,
+        titleSynonyms,
         status,
-        image_url,
+        imageUrl,
         type,
         volumes,
         chapters,
@@ -110,7 +101,7 @@ class Manga{
         published,
         rank,
         score,
-        scored_by,
+        scoredBy,
         popularity,
         members,
         favorites,
@@ -122,14 +113,14 @@ class Manga{
         serializations);
   }
 
-  int get mal_id => _mal_id;
+  int get malId => _malId;
   String get url => _url;
   String get title => _title;
-  String get title_english => _title_english;
-  String get title_japanese => _title_japanese;
-  List<String> get title_synonyms => _title_synonyms;
+  String get titleEnglish => _titleEnglish;
+  String get titleJapanese => _titleJapanese;
+  List<String> get titleSynonyms => _titleSynonyms;
   String get status => _status;
-  String get image_url => _image_url;
+  String get imageUrl => _imageUrl;
   String get type => _type;
   int get volumes => _volumes;
   int get chapters => _chapters;
@@ -137,7 +128,7 @@ class Manga{
   Period get published => _published;
   int get rank => _rank;
   double get score => _score;
-  int get scored_by => _scored_by;
+  int get scoredBy => _scoredBy;
   int get popularity => _popularity;
   int get members => _members;
   int get favorites => _favorites;

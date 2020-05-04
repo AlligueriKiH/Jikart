@@ -1,14 +1,14 @@
 import 'package:jikart/jikan_objects.dart';
 
 class Anime{
-  int _mal_id;
+  int _malId;
   String _url;
-  String _image_url;
-  String _trailer_url;
+  String _imageUrl;
+  String _trailerUrl;
   String _title;
-  String _title_english;
-  String _title_japanese;
-  List<String> _title_synonyms;
+  String _titleEnglish;
+  String _titleJapanese;
+  List<String> _titleSynonyms;
   String _type;
   String _source;
   int _episodes;
@@ -18,7 +18,7 @@ class Anime{
   String _duration;
   String _rating;
   double _score;
-  int _scored_by;
+  int _scoredBy;
   int _rank;
   int _popularity;
   int _members;
@@ -32,19 +32,19 @@ class Anime{
   List<Producer> _licensors;
   List<Producer> _studios;
   List<Genre> _genres;
-  List<String> _opening_themes;
-  List<String> _ending_themes;
+  List<String> _openingThemes;
+  List<String> _endingThemes;
 
 
   Anime(
-      this._mal_id,
+      this._malId,
       this._url,
-      this._image_url,
-      this._trailer_url,
+      this._imageUrl,
+      this._trailerUrl,
       this._title,
-      this._title_english,
-      this._title_japanese,
-      this._title_synonyms,
+      this._titleEnglish,
+      this._titleJapanese,
+      this._titleSynonyms,
       this._type,
       this._source,
       this._episodes,
@@ -54,7 +54,7 @@ class Anime{
       this._duration,
       this._rating,
       this._score,
-      this._scored_by,
+      this._scoredBy,
       this._rank,
       this._popularity,
       this._members,
@@ -68,18 +68,18 @@ class Anime{
       this._licensors,
       this._studios,
       this._genres,
-      this._opening_themes,
-      this._ending_themes);
+      this._openingThemes,
+      this._endingThemes);
 
   factory Anime.fromJson(Map<String, dynamic> json){
-    var mal_id = json['mal_id'];
+    var malId = json['mal_id'];
     var url = json['url'];
-    var image_url = json['image_url'];
-    var trailer_url = json['trailer_url'];
+    var imageUrl = json['image_url'];
+    var trailerUrl = json['trailer_url'];
     var title = json['title'];
-    var title_english = json['title_english'];
-    var title_japanese = json['title_japanese'];
-    var title_synonyms = (json['title_synonyms'] as List)?.map((e) => e as String)?.toList();
+    var titleEnglish = json['title_english'];
+    var titleJapanese = json['title_japanese'];
+    var titleSynonyms = (json['title_synonyms'] as List)?.map((e) => e as String)?.toList();
     var type = json['type'];
     var source = json['source'];
     var episodes = json['episodes'];
@@ -89,7 +89,7 @@ class Anime{
     var duration = json['duration'];
     var rating = json['rating'];
     var score = json['score'] is int ? json['score'].toDouble() : json['score'];
-    var scored_by = json['scored_by'];
+    var scoredBy = json['scored_by'];
     var rank = json['rank'];
     var popularity = json['popularity'];
     var members = json['members'];
@@ -108,17 +108,17 @@ class Anime{
     var licensors = List.generate(json['licensors'].length, (i) => Producer.fromJson(json['licensors'][i]));
     var studios = List.generate(json['studios'].length, (i) => Producer.fromJson(json['studios'][i]));
     var genres = List.generate(json['genres'].length, (i) => Genre.fromJson(json['genres'][i]));
-    var opening_themes = (json['opening_themes'] as List)?.map((e) => e as String)?.toList();
-    var ending_themes = (json['ending_themes'] as List)?.map((e) => e as String)?.toList();
+    var openingThemes = (json['opening_themes'] as List)?.map((e) => e as String)?.toList();
+    var endingThemes = (json['ending_themes'] as List)?.map((e) => e as String)?.toList();
     return Anime(
-      mal_id,
+      malId,
       url,
-      image_url,
-      trailer_url,
+      imageUrl,
+      trailerUrl,
       title,
-      title_english,
-      title_japanese,
-      title_synonyms,
+      titleEnglish,
+      titleJapanese,
+      titleSynonyms,
       type,
       source,
       episodes,
@@ -128,7 +128,7 @@ class Anime{
       duration,
       rating,
       score,
-      scored_by,
+      scoredBy,
       rank,
       popularity,
       members,
@@ -142,19 +142,19 @@ class Anime{
       licensors,
       studios,
       genres,
-      opening_themes,
-      ending_themes
+      openingThemes,
+      endingThemes
     );
   }
 
-  int get mal_id => _mal_id;
+  int get malId => _malId;
   String get url => _url;
-  String get image_url => _image_url;
-  String get trailer_url => _trailer_url;
+  String get imageUrl => _imageUrl;
+  String get trailerUrl => _trailerUrl;
   String get title => _title;
-  String get title_english => _title_english;
-  String get title_japanese => _title_japanese;
-  List<String> get title_synonyms => _title_synonyms;
+  String get titleEnglish => _titleEnglish;
+  String get titleJapanese => _titleJapanese;
+  List<String> get titleSynonyms => _titleSynonyms;
   String get type => _type;
   String get source => _source;
   int get episodes => _episodes;
@@ -164,7 +164,7 @@ class Anime{
   String get duration => _duration;
   String get rating => _rating;
   double get score => _score;
-  int get scored_by => _scored_by;
+  int get scoredBy => _scoredBy;
   int get rank => _rank;
   int get popularity => _popularity;
   int get members => _members;
@@ -178,6 +178,6 @@ class Anime{
   List<Producer> get licensors => _licensors;
   List<Producer> get studios => _studios;
   List<Genre> get genres => _genres;
-  List<String> get opening_themes => _opening_themes;
-  List<String> get ending_themes => _ending_themes;
+  List<String> get openingThemes => _openingThemes;
+  List<String> get endingThemes => _endingThemes;
 }

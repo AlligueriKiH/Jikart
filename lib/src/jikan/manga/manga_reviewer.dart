@@ -1,29 +1,29 @@
 class MangaReviewer{
   String _url;
-  String _image_url;
+  String _imageUrl;
   String _username;
-  int _chapters_read;
+  int _chaptersRead;
   Map<String, dynamic> _scores;
 
   MangaReviewer(
       this._url,
-      this._image_url,
+      this._imageUrl,
       this._username,
-      this._chapters_read,
+      this._chaptersRead,
       this._scores);
 
   factory MangaReviewer.fromJson(Map<String, dynamic> json){
     var url = json['url'];
-    var image_url = json['image_url'];
+    var imageUrl = json['image_url'];
     var username = json['username'];
-    var chapters_read = json['chapters_read'];
+    var chaptersRead = json['chapters_read'];
     var scores = json['scores'];
-    return MangaReviewer(url, image_url, username, chapters_read, scores);
+    return MangaReviewer(url, imageUrl, username, chaptersRead, scores);
   }
 
   String get url => _url;
-  String get image_url => _image_url;
+  String get imageUrl => _imageUrl;
   String get username => _username;
-  int get chapters_read => _chapters_read;
+  int get chaptersRead => _chaptersRead;
   Map<String, dynamic> get scores => _scores;
 }
