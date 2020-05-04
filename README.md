@@ -18,7 +18,7 @@ void main() async{
   print('Score: ${anime.score}\n');
 
   print('Episodes:');
-  episodes?.forEach((f) => print('${f.episode_id} ${f.title}'));
+  episodes?.forEach((f) => print('${f.episodeId} ${f.title}'));
 
   print('\nScores:');
   stats.scores?.forEach((k, v) => print('${k}: ${v.votes} (${v.percentage}%)'));
