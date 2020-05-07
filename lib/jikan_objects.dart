@@ -25,6 +25,10 @@ export 'package:jikart/src/jikan/anime/producer.dart';
 export 'package:jikart/src/jikan/anime/va.dart';
 export 'package:jikart/src/jikan/anime/video.dart';
 
+// Character objects
+export 'package:jikart/src/jikan/character/character.dart';
+export 'package:jikart/src/jikan/character/entry.dart';
+
 // Manga objects
 export 'package:jikart/src/jikan/manga/author.dart';
 export 'package:jikart/src/jikan/manga/manga.dart';
@@ -34,3 +38,12 @@ export 'package:jikart/src/jikan/manga/manga_reviewer.dart';
 export 'package:jikart/src/jikan/manga/manga_stats.dart';
 export 'package:jikart/src/jikan/manga/manga_userupdate.dart';
 export 'package:jikart/src/jikan/manga/serialization.dart';
+
+// Person objects
+export 'package:jikart/src/jikan/person/anime_staff_position.dart';
+export 'package:jikart/src/jikan/person/person.dart';
+export 'package:jikart/src/jikan/person/person_anime.dart';
+export 'package:jikart/src/jikan/person/person_character.dart';
+export 'package:jikart/src/jikan/person/person_manga.dart';
+export 'package:jikart/src/jikan/person/published_manga.dart';
+export 'package:jikart/src/jikan/person/va_role.dart';
