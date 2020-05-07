@@ -1,3 +1,8 @@
+## 0.3.0
+
+- Added all character methods.
+- Addel all person methods.
+
 ## 0.2.0
 
 - Added all manga methods.
