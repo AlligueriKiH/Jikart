@@ -57,4 +57,10 @@ class MangaMethods{
     var recommendations = response['recommendations'] as List;
     return List.generate(recommendations.length, (i) => Recommendation.fromJson(recommendations[i]));
   }
+
+  Future<List<MangaUserUpdate>> getUserUpdates(int id, {int page = 1}) async{
+    var response = await _client.get('manga/${id}/userupdates/${page}');
+    var userupdates = response['users'] as List;
+    return List.generate(userupdates.length, (i) => MangaUserUpdate.fromJson(userupdates[i]));
+  }
 }
