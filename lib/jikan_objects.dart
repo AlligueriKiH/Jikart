@@ -47,3 +47,6 @@ export 'package:jikart/src/jikan/person/person_character.dart';
 export 'package:jikart/src/jikan/person/person_manga.dart';
 export 'package:jikart/src/jikan/person/published_manga.dart';
 export 'package:jikart/src/jikan/person/va_role.dart';
+
+// Search objects
+export 'package:jikart/src/jikan/search/search_anime.dart';

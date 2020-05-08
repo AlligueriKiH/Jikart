@@ -1,3 +1,7 @@
+## 0.4.0
+
+- Added a basic anime search method
+
 ## 0.3.0
 
 - Added all character methods.

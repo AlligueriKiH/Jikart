@@ -13,8 +13,8 @@ class JikartClient {
     _api_version = 'v3';
   }
 
-  Future<Map> get(String method) async{
-    var uri = Uri.https(_api_path, '${_api_version}/${method}');
+  Future<Map> get(String method, {Map<String, String> params}) async{
+    var uri = Uri.https(_api_path, '${_api_version}/${method}', params);
     var response = await _client.send(Request('GET', uri));
     var data = await response.stream.bytesToString();
     var json;
