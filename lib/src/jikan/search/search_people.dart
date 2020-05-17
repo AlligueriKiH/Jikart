@@ -1,6 +1,3 @@
-// import 'dart:convert';
-// SearchPeople searchPeopleFromJson(String str) => SearchPeople.fromJson(json.decode(str));
-// String searchPeopleToJson(SearchPeople data) => json.encode(data.toJson());
 class SearchPeople {
     int _malId;
     String _url;
@@ -25,13 +22,6 @@ class SearchPeople {
         return SearchPeople(malId, url, imageUrl, name, alternativeNames);
     }
 
-    // Map<String, dynamic> toJson() => {
-    //     'mal_id': _malId,
-    //     'url': _url,
-    //     'image_url': _imageUrl,
-    //     'name': _name,
-    //     'alternative_names': List<dynamic>.from(_alternativeNames.map((x) => x)),
-    // };
     int get malId => _malId;
     String get url => _url;
     String get imageUrl => _imageUrl;
